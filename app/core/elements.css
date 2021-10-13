@@ -1,0 +1,9 @@
+form{
+    margin-top: 20px;
+}
+
+/*aqui se usam classes pois o a tambem pode ser btn*/
+.btn{
+    margin-top: 20px;
+    border-radius: 20px;
+}
