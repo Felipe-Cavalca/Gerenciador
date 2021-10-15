@@ -9,11 +9,12 @@ $_UrlWebhookBanco = "";
 $_AppNome = "gerenciador";
 
 //Banco
-$_HostBanco = 'host';
-$_NomeBanco = 'nome';
-$_UsuarioBanco = 'usuario';
-$_SenhaBanco = 'senha';
+$_HostBanco = 'localhost';
+$_NomeBanco = 'gerenciador';
+$_UsuarioBanco = 'root';
+$_SenhaBanco = '';
 
+//os bots precisam de imagem
 //boots
 $_ImgBootDefault = '';
 $_BootDefault = [

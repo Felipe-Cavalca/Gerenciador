@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
             <h3><b>Cadastro</b></h3>
-            <form class="col s12">
+            <form class="col s12" id="cadastro">
                 <div class="input-field col s12 m6">
                     <input id="nome" type="text" class="validate" minlength="1" required>
                     <label for="nome">Nome</label>
@@ -48,9 +48,7 @@
                     <label for="confirmaSenha">Confirme sua senha</label>
                     <span class="helper-text" data-error="Tamanho de senha invalido" data-success="">A confirmação de senha deve ser identica a senha</span>
                 </div>
-                <button class="btn waves-effect waves-light col s5 m4 verde z-depth-5" type="submit" name="cadastrar" onclick="toastErroDesconhecido()">Cadastrar
-                    <i class="material-icons right pulse">send</i>
-                </button>
+                <button class="btn waves-effect waves-light col s5 m4 verde z-depth-5" type="submit" onclick="toastErroDesconhecido()">Cadastrar</button>
                 <div class="col s2 m4"></div>
                 <a class="btn col s5 m4 z-depth-5" href="index.html">Logar</a>
             </form>
@@ -61,6 +59,7 @@
     <script src="framework/jquery-3.6.0.min.js"></script>
     <script src="framework/materialize/js/materialize.js"></script>
     <script src="js/toasts.js"></script>
+    <script src="js/cadastro.js"></script>
     <script>
 
     </script>
