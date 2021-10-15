@@ -12,7 +12,7 @@
  * @param string $cor a cor da mensagem
  * @return void
  */
-function mensagemDiscord($urlWebhook, $mensagem, $mensagemTopo='Aviso', $titulo="mensagem", $descricao="descricao", $boot=[], $cor="ff0000"){
+function mensagemDiscord($urlWebhook, $mensagem, $mensagemTopo='Aviso', $titulo="mensagem", $descricao="descricao", $boot=[], $cor="ffff00"){
     global $_BootDefault;
 
     if(empty($boot)){
