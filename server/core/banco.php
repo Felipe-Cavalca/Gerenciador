@@ -87,5 +87,66 @@
         }
         
     }
+
+    /**
+     * Função para pesquisar no banco de dados
+     * indices do array:
+     * tabela - qual tabela será pesquisada
+     * campos - os campos que são pesquisados
+     * igual - pesquisa os iguais ['indice' => 'valor', .....]
+     * contar - true para contar a quantidade de registros na tabela
+     *
+     * @param array $arr
+     * @return void
+     */
+    function select($arr= []){
+        
+        $query = 'SELECT ';
+
+        if(isset($arr['campos'])){
+            foreach($arr['campos'] as $campo){
+                $query.= '`'.$campo.'`, ';
+            }
+            $query = rtrim($query, ', ');
+            $query.= ' ';
+        }else{
+            $query.= "* ";
+        }
+
+        if(isset($arr['tabela'])){
+            $query.= "FROM `".$arr['tabela'].'` ';
+        }else{
+            return false;
+        }
+
+        if(isset($arr['igual'])){
+            $query.= "WHERE ";
+
+            foreach($arr['igual'] as $campo => $valor){
+                $query.= '`'.$campo.'` = "'.$valor. '" AND ';
+            }
+
+            $query = rtrim($query, ' AND');
+        }
+
+        $query = rtrim($query, ' ');
+
+        $query .= ';';
+        
+        $conn = conexao();
+        $execucao = $conn->prepare($query);
+        $execucao->execute();
+        
+        if(isset($arr['contar'])){
+            $retorno = $execucao->rowCount();
+        }else{
+            $retorno = [];
+            foreach ($execucao as $res) {
+                $retorno[] = $res; 
+            }
+        }
+
+        return $retorno;
+    }
     
 ?>
