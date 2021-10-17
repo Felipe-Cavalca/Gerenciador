@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         //envia os dados e agurda a resp
         $.ajax({
-            url : _UrlServer+"login.php", //!_URL
+            url : _UrlServer+"deslogado/login.php", //!_URL
             type : 'post',
             data : {
                 email : $('#email').val(),

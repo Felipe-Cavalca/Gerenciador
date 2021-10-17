@@ -14,7 +14,7 @@ $(document).ready(function() {
         if($('#senha').val() === $('#confirmaSenha').val()){
             //envia os dados e agurda a resp
             $.ajax({
-                url : _UrlServer+"cadastro.php", //!_URL
+                url : _UrlServer+"deslogado/cadastro.php", //!_URL
                 type : 'post',
                 data : {
                     nome : $('#nome').val(),
