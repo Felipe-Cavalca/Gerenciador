@@ -1,9 +1,9 @@
 <?php
 
-include 'core/variaveis.php';
-include 'core/funcoes.php';
-include 'core/msgDiscord.php';
-include 'core/banco.php';
+include '../../core/variaveis.php';
+include '../../core/funcoes.php';
+include '../../core/msgDiscord.php';
+include '../../core/banco.php';
 
 extract($_POST);
 
