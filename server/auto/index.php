@@ -54,7 +54,7 @@ try{
     }
 
     //envia mensagem de sucesso para o discord
-    mensagemDiscord($_UrlWebhookBanco, [], "Instalação", "AutoRun executado com sucesso", "O  auto run foi executado sem nenhum erro aparente", $_BootBanco, '39ff14');
+    mensagemDiscord([], "Instalação", "AutoRun executado com sucesso", "O  auto run foi executado sem nenhum erro aparente", $_BootBanco, '39ff14');
     
 }catch(Exception $e){
     //envia mensagem de erro caso algo não execute
@@ -63,7 +63,7 @@ try{
         "value" => $e->getMessage(),
         "inline" => false
     ];
-    mensagemDiscord($_UrlWebhookBanco, $mensagem, "Erro no autoRun", "Não foi possivel executar um arquivo sql", "O arquivo foi listado mas por algum erro não foi possivel rodar", $_BootBanco, 'ff0000');
+    mensagemDiscord($mensagem, "Erro no autoRun", "Não foi possivel executar um arquivo sql", "O arquivo foi listado mas por algum erro não foi possivel rodar", $_BootBanco, 'ff0000');
 }
 
 //fecha o arquivo que foi aberto

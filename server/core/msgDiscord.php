@@ -12,8 +12,12 @@
  * @param string $cor a cor da mensagem
  * @return void
  */
-function mensagemDiscord($urlWebhook, $mensagem, $mensagemTopo='Aviso', $titulo="mensagem", $descricao="descricao", $boot=[], $cor="ffff00"){
+function mensagemDiscord($mensagem, $mensagemTopo='Aviso', $titulo="mensagem", $descricao="descricao", $boot=[], $cor="ffff00"){
     global $_BootDefault;
+
+    if(!isset($boot['url'])){
+        $boot['url'] = $_BootDefault['url'];
+    }
 
     if(empty($boot)){
         $boot = $_BootDefault;
@@ -66,8 +70,7 @@ function mensagemDiscord($urlWebhook, $mensagem, $mensagemTopo='Aviso', $titulo=
         ]
 
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
-
-    $ch = curl_init($urlWebhook);
+    $ch = curl_init($boot['url']);
     curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
     curl_setopt( $ch, CURLOPT_POST, 1);
     curl_setopt( $ch, CURLOPT_POSTFIELDS, $json_data);

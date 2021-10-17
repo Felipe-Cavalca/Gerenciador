@@ -26,15 +26,19 @@ $(document).ready(function() {
             })
             .done(function(msg){
                 setTimeout(function () {
-                    dados = JSON.parse(msg);
-                    if(dados['status'] == true){
-                        toastSucesso("Cadastro concluido");
-                        $("#logar").addClass("pulse");
-                        setTimeout(function (){
-                            window.location.href = "login.html"; //!_URL
-                        }, 5000);
+                    if(isJson(msg)){
+                        dados = JSON.parse(msg);
+                        if(dados['status'] == true){
+                            toastSucesso("Cadastro concluido");
+                            $("#logar").addClass("pulse");
+                            setTimeout(function (){
+                                window.location.href = "login.html"; //!_URL
+                            }, 5000);
+                        }else{
+                            toastErro(dados['msg']);    
+                        }    
                     }else{
-                        toastErro(dados['msg']);    
+                        toastErroDesconhecido();
                     }
                 },1500);
             })

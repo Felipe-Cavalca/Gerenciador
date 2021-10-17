@@ -3,7 +3,7 @@
 //urls
 $_UrlApp = "http://gerenciador/v2/app/";
 $_UrlServer = "http://gerenciador/v2/server/";
-$_UrlWebhookBanco = "";
+$_UrlWebhookDefault = "";
 
 //nomes
 $_AppNome = "gerenciador";
@@ -14,10 +14,10 @@ $_NomeBanco = 'gerenciador';
 $_UsuarioBanco = 'root';
 $_SenhaBanco = '';
 
-//os bots precisam de imagem
 //boots
 $_ImgBootDefault = '';
 $_BootDefault = [
+    'url' => $_UrlWebhookDefault,
     'nome' => "Boot ".$_AppNome,
     'img' => $_ImgBootDefault
 ];
