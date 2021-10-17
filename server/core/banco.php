@@ -95,7 +95,7 @@
      * contar - true para contar a quantidade de registros na tabela
      *
      * @param array $arr
-     * @return void
+     * @return array
      */
     function select($arr= []){
         
