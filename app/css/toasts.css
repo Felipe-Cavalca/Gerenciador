@@ -6,6 +6,10 @@
     background-color: green;
 }
 
+.toast-aviso{
+    background-color: gold;
+}
+
 .toast-erro{
     background-color: red;
 }

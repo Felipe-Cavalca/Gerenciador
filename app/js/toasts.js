@@ -13,6 +13,13 @@ function toastErro(msg){
     });
 }
 
+function toastAviso(msg){
+    M.toast({
+        html: msg,
+        classes: "toast toast-aviso"
+    });
+}
+
 function toastErroDesconhecido(){
     M.toast({
         html: 'Erro desconhecido! <br>Entre em contato com a equipe de suporte',
