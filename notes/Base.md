@@ -12,15 +12,28 @@
     <link rel="stylesheet" href="framework/materialize/css/materialize.css">
     <link rel="stylesheet" href="core/cores.css">
     <link rel="stylesheet" href="core/elements.css">
-    <title>{{_AppNameNav}}</title>
+    <link rel="stylesheet" href="core/calsses.css">
+    <title>Login</title>
 </head>
 
 <body>
+    <!--nav-->
+    <nav>
+        <div class="nav-wrapper color-primary">
+            <a class="brand-logo">{{_AppNameNav}}</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            </ul>
+        </div>
+    </nav>
 
-    <script src="core/variaveis.js"></script>
+    <h5>Index</h5>
+
     <script src="framework/jquery-3.6.0.min.js"></script>
     <script src="framework/materialize/js/materialize.js"></script>
+    <script src="core/variaveis.js"></script>
+    <script src="../../core/funcoes.js"></script>
     <script>
+
     </script>
     <script src="core/textos.js"></script>
 </body>

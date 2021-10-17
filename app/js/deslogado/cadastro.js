@@ -14,7 +14,7 @@ $(document).ready(function() {
         if($('#senha').val() === $('#confirmaSenha').val()){
             //envia os dados e agurda a resp
             $.ajax({
-                url : _UrlServer+"cadastro.php",
+                url : _UrlServer+"cadastro.php", //!_URL
                 type : 'post',
                 data : {
                     nome : $('#nome').val(),
@@ -30,6 +30,9 @@ $(document).ready(function() {
                     if(dados['status'] == true){
                         toastSucesso("Cadastro concluido");
                         $("#logar").addClass("pulse");
+                        setTimeout(function (){
+                            window.location.href = "login.html"; //!_URL
+                        }, 5000);
                     }else{
                         toastErro(dados['msg']);    
                     }

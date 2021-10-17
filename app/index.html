@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="framework/materialize/css/materialize.css">
-    <link rel="stylesheet" href="core/elements.css">
-    <link rel="stylesheet" href="core/cores.css">
     <link rel="stylesheet" href="core/calsses.css">
-    <link rel="stylesheet" href="css/toasts.css">
+    <link rel="stylesheet" href="core/cores.css">
+    <link rel="stylesheet" href="core/elements.css">
     <title>Login</title>
 </head>
 
@@ -27,22 +26,12 @@
     <!--conteudo-->
     <div class="container">
         <div class="row">
-            <h3><b>Login</b></h3>
-            <form class="col s12">
-                <div class="input-field col s12 m6 l4">
-                    <input id="email" type="email" class="validate" required>
-                    <label for="email">Email</label>
-                    <span class="helper-text" data-error="Email Invalido" data-success="">O Email não pode ser vazio</span>
-                </div>
-                <div class="input-field col s12 m6 l4">
-                    <input id="senha" type="password" class="validate" minlength="8" maxlength="14" required>
-                    <label for="senha">Senha</label>
-                    <span class="helper-text" data-error="Tamanho de senha Invalido" data-success="">A Senha não pode ser vazia</span>
-                </div>
-                <button class="btn waves-effect waves-light col s5 m4 l4 verde z-depth-5" type="submit" name="logar" onclick="toastErroDesconhecido()">Logar</button>
+            <h2><b>Index</b></h2>
+            <div class="col s12">
+                <a class="btn col s5 m4 l12 z-depth-5" href="pg/deslogado/login.html">Logar</a><!--!_URL-->
                 <div class="col s2 m4 l12"></div>
-                <a class="btn col s5 m4 l12 z-depth-5" href="cadastro.html">Cadastrar</a>
-            </form>
+                <a class="btn col s5 m4 l12 z-depth-5" href="pg/deslogado/cadastro.html">Cadastrar</a><!--!_URL-->
+            </div>
         </div>
     </div>
 
@@ -52,7 +41,6 @@
     <script>
 
     </script>
-    <script src="js/toasts.js"></script>
     <script src="core/textos.js"></script>
 </body>
 
