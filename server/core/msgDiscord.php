@@ -77,6 +77,6 @@ function mensagemDiscord($urlWebhook, $mensagem, $mensagemTopo='Aviso', $titulo=
 
     $response = curl_exec( $ch );
     // If you need to debug, or find out why you can't send message uncomment line below, and execute script.
-    echo $response;
+    //echo $response;
     curl_close( $ch ); 
 }
