@@ -1,7 +1,7 @@
 <?php
 
 //urls
-$_UrlApp = "http://gerenciador/v2/app/";
+$_UrlApp = "http://gerenciador/v2/web/";
 $_UrlServer = "http://gerenciador/v2/server/";
 $_UrlWebhookDefault = "";
 

@@ -35,7 +35,7 @@
      * @param [type] $tabela nome da tabela
      * @return void
      */
-    function insert($dados = [], $tabela){
+    function insert($dados = [], $tabela = ''){
         //captura as variaveis globais
         global $_BootBanco;
 
