@@ -44,3 +44,35 @@ function deslogar(){
     // Apaga o cookie
     document.cookie = 'PHPSESSID=; expires=' + data + '; path=/';
 }
+
+function telaCarregandoHide(){
+    setTimeout(function () {
+        setTimeout(function () {
+            $("#carregandoPagina").removeClass("scale-in");
+            $("#carregandoPagina").addClass("scale-out");
+            setTimeout(function () {
+                $("#carregandoPagina").hide();
+                $("#conteudoPagina").show();
+                $("#conteudoPagina").removeClass("scale-out");
+                $("#conteudoPagina").addClass("scale-in");
+            },300);
+        },300);
+    }, 2000);
+}
+function telaCarregandoShow(){
+    $("#conteudoPagina").removeClass("scale-in");
+    $("#conteudoPagina").addClass("scale-out");
+    setTimeout(function () {
+        $("#conteudoPagina").hide();
+        $("#carregandoPagina").show();
+        $("#carregandoPagina").removeClass("scale-out");
+        $("#carregandoPagina").addClass("scale-in");
+    },300);
+}
+
+function redireciona(url){
+    telaCarregandoShow();
+    setTimeout(function (){
+        window.location.href = url;
+    }, 1500);
+}

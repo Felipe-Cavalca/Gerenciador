@@ -14,46 +14,59 @@
     <title>Login</title>
 </head>
 
-<body>
-    <!--nav-->
-    <nav>
-        <div class="nav-wrapper color-primary">
-            <a class="brand-logo">{{_AppNameNav}}</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            </ul>
-        </div>
-    </nav>
+<body onload="telaCarregandoHide()">
+    <!--carregando-->
+    <section id="carregandoPagina" class="scale-transition scale-in carregandoPagina">
+        <img class="materialboxed" src="../../img/carregando.gif">
+    </section>
 
-    <!--conteudo-->
-    <div class="container">
-        <div class="row">
-            <h3><b>Login</b></h3>
-            <form class="col s12" id="login">
-                <div class="input-field col s12 m6">
-                    <input id="email" type="email" class="validate" required>
-                    <label for="email">Email</label>
-                    <span class="helper-text" data-error="Email Invalido" data-success="">O Email não pode ser vazio</span>
-                </div>
-                <div class="input-field col s12 m6">
-                    <input id="senha" type="password" class="validate" minlength="8" maxlength="14" required>
-                    <label for="senha">Senha</label>
-                    <span class="helper-text" data-error="Tamanho de senha Invalido" data-success="">A Senha não pode ser vazia</span>
-                </div>
-                <div class="col s5 m4 scale-transition" id="btnLogin">
-                    <button class="btn waves-effect waves-light verde z-depth-5" type="submit" name="logar">Logar</button>
-                </div>
-                <div class="col s2 m4"></div>
-                <div class="col s5 m4">
-                    <a class="btn z-depth-5" href="cadastro.html">Cadastrar</a><!--!_URL-->
-                </div>
-                <div class="col s12 m12 scale-transition scale-out carregando" id="carregando">
-                    <div class="progress">
-                        <div class="indeterminate"></div>
+    <!--pagina-->
+    <section id="conteudoPagina" class="scale-transition scale-out" style="display: none;">
+        <!--nav-->
+        <nav>
+            <div class="nav-wrapper color-primary">
+                <a class="brand-logo">{{_AppNameNav}}</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                </ul>
+            </div>
+        </nav>
+
+        <!--conteudo-->
+        <div class="container">
+            <div class="row">
+                <h3><b>Login</b></h3>
+                <form class="col s12" id="login">
+                    <div class="input-field col s12 m6">
+                        <input id="email" type="email" class="validate" required>
+                        <label for="email">Email</label>
+                        <span class="helper-text" data-error="Email Invalido" data-success="">O Email não pode ser
+                            vazio</span>
                     </div>
-                </div>
-            </form>
+                    <div class="input-field col s12 m6">
+                        <input id="senha" type="password" class="validate" minlength="8" maxlength="14" required>
+                        <label for="senha">Senha</label>
+                        <span class="helper-text" data-error="Tamanho de senha Invalido" data-success="">A Senha não
+                            pode ser vazia</span>
+                    </div>
+                    <div class="col s5 m4 scale-transition" id="btnLogin">
+                        <button class="btn waves-effect waves-light verde z-depth-5" type="submit"
+                            name="logar">Logar</button>
+                    </div>
+                    <div class="col s2 m4"></div>
+                    <div class="col s5 m4">
+                        <a class="btn z-depth-5" onclick="redireciona('cadastro.html')">Cadastrar</a>
+                    </div>
+                    <div class="col s12 m12 scale-transition scale-out carregando" id="carregando">
+                        <div class="progress">
+                            <div class="indeterminate"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
+
+
 
     <script src="../../framework/jquery-3.6.0.min.js"></script>
     <script src="../../framework/materialize/js/materialize.js"></script>
