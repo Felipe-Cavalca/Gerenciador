@@ -24,7 +24,7 @@ function validaLogin(){
             if(dados['status'] == false){
                 toastErro(dados['msg']);
                 setTimeout(function () {
-                    window.location.href = _UrlApp; //!_URL
+                    redireciona(_UrlApp); //!_URL
                 }, 1000);
             }    
         }else{

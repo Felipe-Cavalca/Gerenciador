@@ -32,7 +32,7 @@ $(document).ready(function() {
                             toastSucesso("Cadastro concluido");
                             $("#logar").addClass("pulse");
                             setTimeout(function (){
-                                window.location.href = "login.html"; //!_URL
+                                redireciona("login.html");
                             }, 5000);
                         }else{
                             toastErro(dados['msg']);    

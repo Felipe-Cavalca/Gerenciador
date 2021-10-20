@@ -14,25 +14,33 @@
     <title>Home</title>
 </head>
 
-<body>
-    <!--nav-->
-    <nav>
-        <div class="nav-wrapper color-primary">
-            <a href="#" class="brand-logo">{{_AppNameNav}}</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            </ul>
+<body onload="telaCarregandoHide()">
+    <!--carregando-->
+    <section id="carregandoPagina" class="scale-transition scale-in carregandoPagina">
+        <img class="materialboxed" src="../../img/carregando.gif">
+    </section>
+
+    <!--pagina-->
+    <section id="conteudoPagina" class="scale-transition scale-out" style="display: none;">
+        <!--nav-->
+        <nav>
+            <div class="nav-wrapper color-primary">
+                <a href="#" class="brand-logo">{{_AppNameNav}}</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                </ul>
+            </div>
+        </nav>
+
+        <!--conteudo-->
+        <div class="container">
+            <div class="row">
+                <h3><b>Home</b></h3>
+
+
+                <button class="btn waves-effect waves-light vermelho z-depth-5 s12" onclick="sair()">Deslogar</button>
+            </div>
         </div>
-    </nav>
-
-    <!--conteudo-->
-    <div class="container">
-        <div class="row">
-            <h3><b>Home</b></h3>
-
-
-            <button class="btn waves-effect waves-light vermelho z-depth-5 s12" onclick="sair()">Deslogar</button>
-        </div>
-    </div>
+    </section>
 
     <script src="../../framework/jquery-3.6.0.min.js"></script>
     <script src="../../framework/materialize/js/materialize.js"></script>

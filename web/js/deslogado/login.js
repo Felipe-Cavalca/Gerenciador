@@ -28,7 +28,7 @@ $(document).ready(function() {
                     if(dados['status'] == true){
                         toastSucesso("Login concluido");
                         setTimeout(function (){
-                            window.location.href = "../home/home.html"; //!_URL
+                            redireciona("../home/home.html");
                         }, 2000);
                     }else{
                         toastErro(dados['msg']);

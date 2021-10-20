@@ -7,38 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="framework/materialize/css/materialize.css">
-    <link rel="stylesheet" href="core/calsses.css">
     <link rel="stylesheet" href="core/cores.css">
     <link rel="stylesheet" href="core/elements.css">
+    <link rel="stylesheet" href="core/calsses.css">
     <link rel="stylesheet" href="css/toasts.css">
     <title>Login</title>
 </head>
 
-<body>
-    <!--nav-->
-    <nav>
-        <div class="nav-wrapper color-primary">
-            <a class="brand-logo">{{_AppNameNav}}</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            </ul>
-        </div>
-    </nav>
+<body onload="telaCarregandoHide()">
+    <!--carregando-->
+    <section id="carregandoPagina" class="scale-transition scale-in carregandoPagina">
+        <img class="materialboxed" src="img/carregando.gif">
+    </section>
 
-    <!--conteudo-->
-    <div class="container">
-        <div class="row">
-            <h2><b>Index</b></h2>
-            <div class="col s12">
-                <a class="btn col s5 m4 l12 z-depth-5" href="pg/deslogado/login.html">Logar</a><!--!_URL-->
-                <div class="col s2 m4 l12"></div>
-                <a class="btn col s5 m4 l12 z-depth-5" href="pg/deslogado/cadastro.html">Cadastrar</a><!--!_URL-->
+    <!--pagina-->
+    <section id="conteudoPagina" class="scale-transition scale-out" style="display: none;">
+        <!--nav-->
+        <nav>
+            <div class="nav-wrapper color-primary">
+                <a class="brand-logo">{{_AppNameNav}}</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                </ul>
+            </div>
+        </nav>
+
+        <!--conteudo-->
+        <div class="container">
+            <div class="row">
+                <h2><b>Index</b></h2>
+                <div class="col s12">
+                    <a class="btn col s12 m5 z-depth-5" onclick="redireciona('pg/deslogado/login.html')">Logar</a>
+                    <div class="col s12 m2"></div>
+                    <a class="btn col s12 m5 z-depth-5" onclick="redireciona('pg/deslogado/cadastro.html')">Cadastrar</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script src="core/variaveis.js"></script>
     <script src="framework/jquery-3.6.0.min.js"></script>
     <script src="framework/materialize/js/materialize.js"></script>
+    <script src="core/variaveis.js"></script>
     <script src="core/funcoes.js"></script>
     <script src="js/toasts.js"></script>
     <script>
