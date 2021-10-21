@@ -1,9 +1,24 @@
 .color-primary{
-    background-color:darkgray;
+    background-color:cyan:
+}
+.color-secondary{
+    background-color:cornflowerblue;
+}
+.waves-effect.waves-primary {
+    background-color:cyan:
+}
+.waves-effect.waves-secondary {
+    background-color:cornflowerblue;
+}
+.progress .indeterminate{
+    background-color:purple;
 }
 
-.btn{
-    background-color:gold;
+.salvar{
+    background-color: green;
+}
+.sair, .excluit{
+    background-color: red;
 }
 
 .amarelo{
