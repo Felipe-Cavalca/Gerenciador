@@ -5,7 +5,7 @@ $_UrlApp = "http://gerenciador/v2/web/";
 $_UrlServer = "http://gerenciador/v2/server/";
 $_UrlWebhookDefault = "";
 
-//nomes
+//nomes 
 $_AppNome = "gerenciador";
 
 //Banco
