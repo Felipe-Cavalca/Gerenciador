@@ -1,0 +1,7 @@
+// Arquivo de modelo das variaveis do sistema
+// para deixa-lo funcional basta preencher as variaveis e renomear o arquivo para "variaveis.js" - retirando o .exemplo
+
+var _UrlApp = "http://gerenciador/v2/web/";
+var _UrlServer = "http://gerenciador/v2/server/controllers/";
+
+var _NomeApp = "Gerenciador"; 
