@@ -6,35 +6,142 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="../../framework/materialize/css/materialize.css">
     <link rel="stylesheet" href="../../core/cores.css">
     <link rel="stylesheet" href="../../core/elements.css">
     <link rel="stylesheet" href="../../core/calsses.css">
     <link rel="stylesheet" href="../../css/toasts.css">
+    <link rel="stylesheet" href="../../css/home/home.css">
     <title>Home</title>
 </head>
 
 <body onload="telaCarregandoHide()">
+    <nav class="scale-transition scale-out conteudoPagina fixed" style="display: none;">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">{{_AppNameNav}}</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                {{_Nav}}
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        {{_NavMobile}}
+    </ul>
+
     <!--carregando-->
-    <section id="carregandoPagina" class="scale-transition scale-in carregandoPagina">
+    <section class="scale-transition scale-in carregandoPagina">
         <img class="materialboxed" src="../../img/carregando.gif">
     </section>
 
     <!--pagina-->
-    <section id="conteudoPagina" class="scale-transition scale-out" style="display: none;">
-        <!--nav-->
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo">{{_AppNameNav}}</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                </ul>
-            </div>
-        </nav>
-
+    <section class="scale-transition scale-out conteudoPagina" style="display: none;">
         <!--conteudo-->
-        <div class="container">
+        <div style="margin: 50px">
             <div class="row">
                 <h3><b>Home</b></h3>
+
+
+                <!--Inventarios-->
+                <div class="col s12 l6">
+                    <h3>Inventarios</h3>
+                    <div class="input-field">
+                        <i class="material-icons prefix">textsms</i>
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">Autocomplete</label>
+                    </div>
+                    <div id="tabela">
+                        <table class="striped centered">
+                            <thead>
+                                <tr>
+                                    <th>Inventario</th>
+                                    <th>Qtd Itens</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--Graficos-->
+                <div class="col s12 l6">
+                    <h3>Graficos</h3>
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab col s4"><a href="#vendas" onclick="grafico()">Vendas</a></li>
+                                <li class="tab col s4"><a href="#adicionados" onclick="grafico()">Adcionados</a></li>
+                                <li class="tab col s4"><a href="#removidos" onclick="grafico()">Removidos</a></li>
+                            </ul>
+                        </div>
+                        <div id="vendas" class="col s12">
+                            <div class="grafico-vendas">
+                                <div id="grafico-vendas"></div>
+                            </div>
+                        </div>
+                        <div id="adicionados" class="col s12">
+                            <div class="grafico-adicionados">
+                                <div id="grafico-adicionados"></div>
+                            </div>
+                        </div>
+                        <div id="removidos" class="col s12">
+                            <div class="grafico-removidos">
+                                <div id="grafico-removidos"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                 <button class="btn z-depth-5 s12 sair" onclick="sair()">Deslogar</button>
@@ -47,9 +154,20 @@
     <script src="../../core/variaveis.js"></script>
     <script src="../../core/funcoes.js"></script>
     <script src="../../js/toasts.js"></script>
+    <script src="../../js/home/home.js"></script>
     <script>
         validaLogin();
-        function sair(){
+        autocompleteInventarios();
+
+        $(document).ready(function () {
+            $('.tabs').tabs();
+            $('input.autocomplete').autocomplete({
+                data: valAutocompleteInventarios,
+            });
+        });
+
+        // funções temporarias por não tenho outra tela para eleas
+        function sair() {
             toastAviso("Deslogando");
             setTimeout(function () {
                 deslogar();

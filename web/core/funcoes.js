@@ -1,3 +1,8 @@
+//inicialização de componentes de todas as paginas
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+});
+
 function isJson(str) {
     try {
         JSON.parse(str);
@@ -48,25 +53,25 @@ function deslogar(){
 function telaCarregandoHide(){
     setTimeout(function () {
         setTimeout(function () {
-            $("#carregandoPagina").removeClass("scale-in");
-            $("#carregandoPagina").addClass("scale-out");
+            $(".carregandoPagina").removeClass("scale-in");
+            $(".carregandoPagina").addClass("scale-out");
             setTimeout(function () {
-                $("#carregandoPagina").hide();
-                $("#conteudoPagina").show();
-                $("#conteudoPagina").removeClass("scale-out");
-                $("#conteudoPagina").addClass("scale-in");
+                $(".carregandoPagina").hide();
+                $(".conteudoPagina").show();
+                $(".conteudoPagina").removeClass("scale-out");
+                $(".conteudoPagina").addClass("scale-in");
             },300);
         },300);
     }, 2000);
 }
 function telaCarregandoShow(){
-    $("#conteudoPagina").removeClass("scale-in");
-    $("#conteudoPagina").addClass("scale-out");
+    $(".conteudoPagina").removeClass("scale-in");
+    $(".conteudoPagina").addClass("scale-out");
     setTimeout(function () {
-        $("#conteudoPagina").hide();
-        $("#carregandoPagina").show();
-        $("#carregandoPagina").removeClass("scale-out");
-        $("#carregandoPagina").addClass("scale-in");
+        $(".conteudoPagina").hide();
+        $(".carregandoPagina").show();
+        $(".carregandoPagina").removeClass("scale-out");
+        $(".carregandoPagina").addClass("scale-in");
     },300);
 }
 
