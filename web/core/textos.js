@@ -1,4 +1,4 @@
-var nav = ' <li><a href="'+_UrlApp+'cadastro.html">Cadastro</a></li>' +
+var nav = ' <li><a href="'+_UrlApp+'pg/cadastro.html">Cadastro</a></li>' +
           ' <li><a href="badges.html">Components</a></li>' +
           ' <li><a href="collapsible.html">Javascript</a></li>' +
           ' <li><a href="mobile.html">Mobile</a></li>';

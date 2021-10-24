@@ -17,15 +17,18 @@
 </head>
 
 <body onload="telaCarregandoHide()">
-    <nav class="scale-transition scale-out conteudoPagina fixed" style="display: none;">
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">{{_AppNameNav}}</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                {{_Nav}}
-            </ul>
-        </div>
-    </nav>
+    <!--Nav-->
+    <div class="navbar-fixed scale-transition scale-out conteudoPagina" style="display: none;">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">{{_AppNameNav}}</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    {{_Nav}}
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <ul class="sidenav" id="mobile-demo">
         {{_NavMobile}}
