@@ -21,8 +21,8 @@
     <div class="navbar-fixed scale-transition scale-out conteudoPagina" style="display: none;">
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">{{_AppNameNav}}</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a onclick="redireciona('{{_UrlHome}}');" class="brand-logo">{{_AppNameNav}}</a>
+                <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     {{_Nav}}
                 </ul>
@@ -45,7 +45,6 @@
         <div style="margin: 50px">
             <div class="row">
                 <h3><b>Home</b></h3>
-
 
                 <!--Inventarios-->
                 <div class="col s12 l6">
