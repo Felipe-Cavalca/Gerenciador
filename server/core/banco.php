@@ -33,7 +33,7 @@
      *
      * @param [type] $dados array associativo ['campo' => 'valor', 'campo2' => 'valor2', ...]
      * @param [type] $tabela nome da tabela
-     * @return void
+     * @return array
      */
     function insert($dados = [], $tabela = ''){
         //captura as variaveis globais
@@ -70,7 +70,7 @@
 
             //faz o insert   
             if($sth->execute($dados)){
-                return true;
+                return ['status' => true, 'id' => $pdo->lastInsertId()];
             }else{
                 throw new Exception('O dado não foi inserido');
             }
@@ -81,7 +81,7 @@
                 "inline" => false
             ];
             mensagemDiscord($mensagem, "Erro no insert", "Execessão ao inserir", "Houve um erro e não foi possivel inserir os dados", $_BootBanco, 'ff0000');
-            return false;
+            return ['status' => false];
         }
         
     }

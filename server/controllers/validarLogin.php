@@ -1,5 +1,7 @@
 <?php
 
+header('Content-Type: application/json');
+
 include '../core/variaveis.php';
 include '../core/funcoes.php';
 include '../core/msgDiscord.php';

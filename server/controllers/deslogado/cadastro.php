@@ -1,5 +1,7 @@
 <?php
 
+header('Content-Type: application/json');
+
 include '../../core/variaveis.php';
 include '../../core/funcoes.php';
 include '../../core/msgDiscord.php';
@@ -21,7 +23,10 @@ if(select($query) == 0){
         'email' => $email,
         'senha' => hash('sha512', $senha)
     ];
-    if(insert($dados, 'usuario')){
+
+    $insert = insert($dados, 'usuario');
+    
+    if($insert['status']){
         $retorno= [
             'status' => true,
             'msg' => "Cadastro efetuado com sucesso"

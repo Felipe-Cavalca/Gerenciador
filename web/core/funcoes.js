@@ -3,16 +3,6 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
 });
 
-function isJson(str) {
-    try {
-        JSON.parse(str);
-    } catch (e) {
-        return false;
-    }
-
-    return true;
-}
-
 function validaLogin(){
     //envia os dados e agurda a resp
     $.ajax({
@@ -24,16 +14,11 @@ function validaLogin(){
         }
     })
     .done(function(msg){
-        if(isJson(msg)){
-            dados = JSON.parse(msg);
-            if(dados['status'] == false){
-                toastErro(dados['msg']);
-                setTimeout(function () {
-                    redireciona(_UrlApp); //!_URL
-                }, 1000);
-            }    
-        }else{
-            toastErroDesconhecido();
+        if(msg['status'] == false){
+            toastErro(msg['msg']);
+            setTimeout(function () {
+                redireciona(_UrlApp); //!_URL
+            }, 1000);
         }
     })
     .fail(function(){
@@ -48,6 +33,11 @@ function deslogar(){
     data = data.toGMTString();
     // Apaga o cookie
     document.cookie = 'PHPSESSID=; expires=' + data + '; path=/';
+
+    toastAviso('Saindo');
+    setTimeout(function () {
+        redireciona(_UrlApp); //!_URL
+    }, 1000);
 }
 
 function telaCarregandoHide(){

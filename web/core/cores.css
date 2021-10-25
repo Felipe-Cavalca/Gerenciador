@@ -1,19 +1,43 @@
+/*Cores gerais*/
 .color-primary{
     background-color:cyan;
 }
 .color-secondary{
     background-color:cornflowerblue;
 }
+
+/*Cores tabs*/
+/*tabs padrão*/
+.tabs .tab a{
+    color:cornflowerblue;
+}
+/* tab que o mouse está em cima*/
+.tabs .tab a:hover{
+    color:cornflowerblue;
+}
+/* tab que está ativa */
+.tabs .tab a.active{
+    color:blue;
+}
+/* indicador da tab */
+.tabs .indicator{
+    background-color:darkcyan;
+}
+
+/*efeito de sombra ao clicar*/
 .waves-effect.waves-primary {
     background-color:cyan;
 }
 .waves-effect.waves-secondary {
     background-color:cornflowerblue;
 }
+
+/*Carregando*/
 .progress .indeterminate{
     background-color:purple;
 }
 
+/*botoes*/
 .salvar{
     background-color: green;
 }
@@ -21,6 +45,7 @@
     background-color: red;
 }
 
+/*cores*/
 .amarelo{
     background-color:gold;
 }

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="../framework/materialize/css/materialize.css">
+    <link rel="stylesheet" href="../core/cores.css">
+    <link rel="stylesheet" href="../core/elements.css">
+    <link rel="stylesheet" href="../core/calsses.css">
+    <link rel="stylesheet" href="../css/toasts.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <title>Home</title>
+</head>
+
+<body onload="telaCarregandoHide()">
+    <!--Nav-->
+    <div class="scale-transition scale-out conteudoPagina navbar-fixed" style="display: none;">
+        <nav>
+            <div class="nav-wrapper">
+                <a onclick="redireciona('{{_UrlHome}}');" class="brand-logo">{{_AppNameNav}}</a>
+                <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    {{_Nav}}
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <ul class="sidenav" id="mobile-demo">
+        {{_NavMobile}}
+    </ul>
+
+    <!--carregando-->
+    <section class="scale-transition scale-in carregandoPagina">
+        <img class="materialboxed" src="../img/carregando.gif">
+    </section>
+
+    <!--pagina-->
+    <section class="scale-transition scale-out conteudoPagina" style="display: none;">
+        <!--conteudo-->
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab"><a class="active" href="#inventario">Inventarios</a></li>
+                    <li class="tab"><a href="#categoria">Categorias</a></li>
+                    <li class="tab"><a href="#produto">Produtos</a></li>
+                    <li class="tab"><a href="#pagamento">Formas de pagamento</a></li>
+                </ul>
+            </div>
+            <div id="inventario" class="col s12 row">
+                <div class="col s12 l6 form-flutuante form">
+                    <!-- cadastro -->
+                    <h3>Cadastro</h3>
+                    <div class="row">
+                        <form class="col s12" id="form-inventario">
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input id="sigla" type="text" class="validate" data-length="5" maxlength="5">
+                                    <label for="sigla">Sigla</label>
+                                </div>
+                                <div class="input-field col s9">
+                                    <input id="nome" type="text" class="validate" required>
+                                    <label for="nome">Nome</label>
+                                    <span class="helper-text" data-error="Nome Invalido" data-success="">O nome não pode ser vazio</span>
+                                </div>
+                                <div class="col s12 scale-transition" id="btn-cadastro-inventario">
+                                    <button class="btn waves-effect waves-primary z-depth-5 salvar" type="submit">Cadastrar</button>
+                                </div>
+                            </div>
+                            <div class="col s12 m12 scale-transition scale-out carregando" id="carregando-inventario">
+                                <div class="progress">
+                                    <div class="indeterminate"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col s12 l6">
+                    <h3>Inventarios</h3>
+                    <div class="input-field">
+                        <i class="material-icons prefix">textsms</i>
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">Autocomplete</label>
+                    </div>
+                    <div id="tabelaIventarios">
+                        <table class="striped centered">
+                            <thead>
+                                <tr>
+                                    <th>Inventario</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 001</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 002</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                                <tr>
+                                    <td>Inventario 003</td>
+                                    <td><i class="material-icons prefix">edit</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div id="categoria" class="col s12">
+                Categoria
+            </div>
+            <div id="produto" class="col s12">
+                Produto
+            </div>
+            <div id="pagamento" class="col s12">
+                Pagamento
+            </div>
+        </div>
+    </section>
+
+    <script src="../framework/jquery-3.6.0.min.js"></script>
+    <script src="../framework/materialize/js/materialize.js"></script>
+    <script src="../core/variaveis.js"></script>
+    <script src="../core/funcoes.js"></script>
+    <script src="../js/toasts.js"></script>
+    <script src="../js/cadastro.js"></script>
+    <script>
+        validaLogin();
+
+        $(document).ready(function () {
+            $('.tabs').tabs();
+            $('input#sigla').characterCounter();
+        });
+
+        // verifica o tamanho para retirar o flutuante
+        $(window).resize(function () {
+            if($(window).width() < 993){
+                $('.form').removeClass('form-flutuante');
+            }else{
+                $('.form').addClass('form-flutuante');
+            }
+        });
+    </script>
+    <script src="../core/textos.js"></script>
+</body>
+
+</html>

@@ -23,18 +23,13 @@ $(document).ready(function() {
         })
         .done(function(msg){
             setTimeout(function () {
-                if(isJson(msg)){
-                    dados = JSON.parse(msg);
-                    if(dados['status'] == true){
-                        toastSucesso("Login concluido");
-                        setTimeout(function (){
-                            redireciona("../home/home.html");
-                        }, 2000);
-                    }else{
-                        toastErro(dados['msg']);
-                    }    
+                if(msg['status'] == true){
+                    toastSucesso("Login concluido");
+                    setTimeout(function (){
+                        redireciona("../home/home.html");
+                    }, 2000);
                 }else{
-                    toastErroDesconhecido();
+                    toastErro(msg['msg']);
                 }
             },1500);
         })
