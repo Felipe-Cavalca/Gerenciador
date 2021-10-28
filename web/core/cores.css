@@ -41,8 +41,11 @@
 .salvar{
     background-color: green;
 }
-.sair, .excluit{
+.sair, .excluir, .cancelar{
     background-color: red;
+}
+.atencao{
+    background-color: gold;
 }
 
 /*cores*/

@@ -3,3 +3,10 @@
     position: sticky;
     top: 100px;
 }
+
+/* carregamentos da tabela */
+.carregando-tabela{
+    position: sticky;
+    top: 200px;
+    margin-left: 45%;
+}

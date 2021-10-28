@@ -1,1 +1,0 @@
-ALTER TABLE `usuario` ADD `telefone` varchar(255) AFTER `senha`;

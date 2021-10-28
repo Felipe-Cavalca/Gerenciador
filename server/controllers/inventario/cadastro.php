@@ -12,7 +12,8 @@ extract($_POST);
 if(validaLogin()){
     $dados = [
         'sigla' => $sigla,
-        'nome' => $nome
+        'nome' => $nome,
+        'ativo' => true
     ];
     
     $insert = insert($dados, 'inventario');

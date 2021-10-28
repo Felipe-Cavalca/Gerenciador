@@ -62,4 +62,24 @@
 
 # Base para criar arquivo no servidor
 ```
+<?php
+
+header('Content-Type: application/json');
+
+include '../../core/variaveis.php';
+include '../../core/funcoes.php';
+include '../../core/msgDiscord.php';
+include '../../core/banco.php';
+
+if(validaLogin()){
+    
+}else{
+    $retorno = [
+        'status' => false,
+        'logado' => false,
+        'msg' => 'você não está logado'
+    ];
+}
+
+echo json_encode($retorno, true);
 ```

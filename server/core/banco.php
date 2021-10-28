@@ -93,43 +93,49 @@
      * campos - os campos que são pesquisados
      * igual - pesquisa os iguais ['indice' => 'valor', .....]
      * contar - true para contar a quantidade de registros na tabela
+     * query - a consulta em sql
      *
      * @param array $arr
      * @return array
      */
     function select($arr= []){
         
-        $query = 'SELECT ';
-
-        if(isset($arr['campos'])){
-            foreach($arr['campos'] as $campo){
-                $query.= '`'.$campo.'`, ';
+        if(!isset($arr['query'])){
+            $query = 'SELECT ';
+    
+            if(isset($arr['campos'])){
+                foreach($arr['campos'] as $campo){
+                    $query.= '`'.$campo.'`, ';
+                }
+                $query = rtrim($query, ', ');
+                $query.= ' ';
+            }else{
+                $query.= "* ";
             }
-            $query = rtrim($query, ', ');
-            $query.= ' ';
-        }else{
-            $query.= "* ";
-        }
-
-        if(isset($arr['tabela'])){
-            $query.= "FROM `".$arr['tabela'].'` ';
-        }else{
-            return false;
-        }
-
-        if(isset($arr['igual'])){
-            $query.= "WHERE ";
-
-            foreach($arr['igual'] as $campo => $valor){
-                $query.= '`'.$campo.'` = "'.$valor. '" AND ';
+    
+            if(isset($arr['tabela'])){
+                $query.= "FROM `".$arr['tabela'].'` ';
+            }else{
+                return false;
             }
-
-            $query = rtrim($query, ' AND');
+    
+            if(isset($arr['igual'])){
+                $query.= "WHERE ";
+    
+                foreach($arr['igual'] as $campo => $valor){
+                    $query.= '`'.$campo.'` = "'.$valor. '" AND ';
+                }
+    
+                $query = rtrim($query, ' AND');
+            }
+    
+            $query = rtrim($query, ' ');
+    
+            $query .= ';';
+        }else{
+            $query = $arr['query'];
         }
 
-        $query = rtrim($query, ' ');
-
-        $query .= ';';
         
         $conn = conexao();
         $execucao = $conn->prepare($query);
@@ -147,4 +153,39 @@
         return $retorno;
     }
     
+    function update($arr = [], $tabela = ''){
+        if(!isset($arr['query'])){
+
+        }else{
+            $query = $arr['query'];
+        }
+
+        $conn = conexao();
+        $execucao = $conn->prepare($query);
+        $execucao->execute();
+        
+        if(isset($arr['contar'])){
+            $retorno = $execucao->rowCount();
+        }else{
+            $retorno = [];
+            foreach ($execucao as $res) {
+                $retorno[] = $res; 
+            }
+        }
+
+        return $retorno;
+    }
+
+    function query($query) {
+        $conn = conexao();
+        $execucao = $conn->prepare($query);
+        $execucao->execute();
+        
+        $retorno = [];
+        foreach ($execucao as $res) {
+            $retorno[] = $res; 
+        }
+        
+        return $retorno;
+    }
 ?>
