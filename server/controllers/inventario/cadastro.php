@@ -42,7 +42,7 @@ if(validaLogin()){
                 "value" => $dados,
                 "inline" => false
             ];
-            mensagemDiscord($mensagem, "Erro de vinculo", "Houve um erro no relacionamento", "Não foi possivel vincular o usuario ao inventario", $_BootErro, 'ff0000');
+            mensagemDiscord($mensagem, $_BootErro, 'ff0000');
         }
     }else{
         $retorno = [

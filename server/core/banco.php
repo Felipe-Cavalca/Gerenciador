@@ -22,7 +22,7 @@
                 "value" => $e->getMessage(),
                 "inline" => false
             ];
-            mensagemDiscord($mensagem, "Erro ao conectar", "Não foi possivel conectar ao banco", "Erro de conexão com a base de dados", $_BootBanco, 'ff0000');
+            mensagemDiscord($mensagem, $_BootBanco, 'ff0000');
             return false;
         }
     }
@@ -80,7 +80,7 @@
                 "value" => $e->getMessage(),
                 "inline" => false
             ];
-            mensagemDiscord($mensagem, "Erro no insert", "Execessão ao inserir", "Houve um erro e não foi possivel inserir os dados", $_BootBanco, 'ff0000');
+            mensagemDiscord($mensagem, $_BootBanco, 'ff0000');
             return ['status' => false];
         }
         

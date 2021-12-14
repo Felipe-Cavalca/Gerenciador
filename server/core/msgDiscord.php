@@ -3,24 +3,22 @@
 /**
  * Envia mensagem para o discord
  *
- * @param string $urlWebhook a url do webhook (para mais canais)
  * @param array $mensagem o array da mensagem
- * @param string $mensagemTopo a mensagem do topo
- * @param string $titulo o titulo dentro do card
- * @param string $descricao o texto do card
  * @param array $boot array com os dados do boot
  * @param string $cor a cor da mensagem
  * @return void
  */
-function mensagemDiscord($mensagem, $mensagemTopo='Aviso', $titulo="mensagem", $descricao="descricao", $boot=[], $cor="ffff00"){
+function mensagemDiscord($mensagem, $boot=[], $cor="ffff00"){
     global $_BootDefault;
 
     if(!isset($boot['url'])){
         $boot['url'] = $_BootDefault['url'];
     }
-
-    if(empty($boot)){
-        $boot = $_BootDefault;
+    if(!isset($boot['nome'])){
+        $boot['nome'] = $_BootDefault['nome'];
+    }
+    if(!isset($boot['img'])){
+        $boot['img'] = $_BootDefault['img'];
     }
 
     //adciona o http user agent
@@ -39,7 +37,7 @@ function mensagemDiscord($mensagem, $mensagemTopo='Aviso', $titulo="mensagem", $
 
     $json_data = json_encode([
         // Message
-        "content" => $mensagemTopo,
+        // "content" => $mensagemTopo,
         
         // Username
         "username" => $boot['nome'],
@@ -50,13 +48,13 @@ function mensagemDiscord($mensagem, $mensagemTopo='Aviso', $titulo="mensagem", $
         "embeds" => [
             [
                 // Embed Title
-                "title" => $titulo,
+                // "title" => $titulo,
 
                 // Embed Type
                 "type" => "rich",
 
                 // Embed Description
-                "description" => $descricao,
+                // "description" => $descricao,
 
                 // Timestamp of embed must be formatted as ISO8601
                 "timestamp" => date("c", strtotime("now")),
