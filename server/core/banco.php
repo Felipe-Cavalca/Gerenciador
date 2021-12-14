@@ -8,13 +8,14 @@
     function conexao(){
 
         global $_HostBanco;
+        global $_PortaBanco;
         global $_NomeBanco;
         global $_UsuarioBanco;
         global $_SenhaBanco;
         global $_BootBanco;
 
         try{
-            $pdo = new PDO("mysql:host=$_HostBanco;dbname=$_NomeBanco", $_UsuarioBanco, $_SenhaBanco);
+            $pdo = new PDO("mysql:host=$_HostBanco:$_PortaBanco;dbname=$_NomeBanco", $_UsuarioBanco, $_SenhaBanco);
             return $pdo;
         }catch(Exception $e){
             $mensagem[] = [
