@@ -1,6 +1,10 @@
 //inicialização de componentes de todas as paginas
 $(document).ready(function(){
     $('.sidenav').sidenav();
+
+    // window.addEventListener("beforeunload", function (event) {
+    //     telaCarregandoShow();
+    // });
 });
 
 function validaLogin(){
@@ -70,4 +74,8 @@ function redireciona(url){
     setTimeout(function (){
         window.location.href = url;
     }, 1500);
+}
+
+function hideElement(elem){
+    
 }
